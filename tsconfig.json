@@ -19,7 +19,8 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@common/*": ["src/common/*"],
-      "@env": ["src/env"]
+      "@env": ["src/env"],
+      "@user/*": ["src/v1/user/*"]
     },
     "esModuleInterop": true
   }

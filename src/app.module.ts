@@ -1,10 +1,20 @@
+import env from '@env';
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { HealthController } from './health/health.controller';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
+  imports: [
+    MongooseModule.forRoot(
+      `mongodb+srv://${env.MONGODB_DB_USER}:${env.MONGODB_DB_PASS}@${env.MONGODB_HOST}`,
+      {
+        dbName: env.MONGODB_DB_NAME,
+      },
+    ),
+  ],
+  controllers: [AppController, HealthController],
   providers: [AppService],
 })
 export class AppModule {}

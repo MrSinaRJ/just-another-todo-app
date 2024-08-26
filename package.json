@@ -73,7 +73,9 @@
     "moduleNameMapper": {
       "^@user/(.*)$": "<rootDir>/v1/user/$1",
       "^@todo-item/(.*)$": "<rootDir>/v1/todo-item/$1",
-      "^@todo-list/(.*)$": "<rootDir>/v1/todo-list/$1"
+      "^@todo-list/(.*)$": "<rootDir>/v1/todo-list/$1",
+      "^@common/(.*)$": "<rootDir>/common/$1",
+      "^@env": "<rootDir>/env/$1"
     },
     "testEnvironment": "node"
   }

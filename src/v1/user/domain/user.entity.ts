@@ -1,3 +1,5 @@
+import * as bcrypt from 'bcrypt';
+
 export class User {
   constructor(
     public readonly _id: string,
@@ -7,7 +9,12 @@ export class User {
   ) {}
 
   // password validation
-  public validatePassword(password: string): boolean {
-    return this.password === password;
+  public async validatePassword(password: string): Promise<boolean> {
+    return bcrypt.compare(password, this.password);
+  }
+
+  // hash password before saving (not a problem with double hashing)
+  public async setPassword(password: string): Promise<void> {
+    this.password = await bcrypt.hash(password, 10);
   }
 }

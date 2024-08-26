@@ -14,4 +14,5 @@ export interface IEnvironmentConfig {
   ORIGIN: string;
 
   SECRET: string;
+  JWT_EXPIRES_IN: string;
 }

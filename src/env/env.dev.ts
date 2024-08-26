@@ -14,4 +14,5 @@ export default {
   ORIGIN: '*',
 
   SECRET: 'cLeY*QcUAb@YppW2k.iyJFD-LEXaxR.bUWd@uvc4-fV!eVd7.go.Am-WK@!QwM!!',
+  JWT_EXPIRES_IN: '2h',
 };
